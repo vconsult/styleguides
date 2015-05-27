@@ -9,7 +9,7 @@
 * [Commas](#commas)
 * [Semicolons](#semicolons)
 * [Comments](#comments)
-* [Variables](#variables)
+* [Assignment](#assignment)
 * [Whitespace](#whitespace)
 * [Naming conventions](#naming-conventions)
 
@@ -254,7 +254,7 @@ function foo() {
 
 + Pad comments with a space.
 
-## Variables
+## Assignment
 
 + Never use `var`. Prefer [`let`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let) to declare a block scope local variable; use [`const`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/const) to declare a constant whose value can not be re-assigned in the given scope (global or local).
 
@@ -372,6 +372,21 @@ function bar() {
   const result = 'foo';
   return updatedList;
 }
+```
+
++ Use [destructuring
+  assignment](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment) when assigning data from arrays or objects.
+
+```javascript
+let foo = ['one', 'two', 'three'];
+
+// bad (without destructuring)
+let one   = foo[0];
+let two   = foo[1];
+let three = foo[2];
+
+// good (with destructuring)
+let [one, two, three] = foo;
 ```
 
 ## Whitespace
